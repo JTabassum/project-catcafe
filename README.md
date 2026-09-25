@@ -10,7 +10,7 @@ networked, multi-user theme - see the "Suggested projects" section of
 
 | Full name    | GitHub username |
 |--------------|-----------------|
-| <Juveria Tabassum>       | @<JTabassum>     |
+| <name>       | @<username>     |
 | <name>       | @<username>     |
 | <name>       | @<username>     |
 | <name>       | @<username>     |
