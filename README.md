@@ -10,10 +10,10 @@ networked, multi-user theme - see the "Suggested projects" section of
 
 | Full name    | GitHub username |
 |--------------|-----------------|
-| <Juveria Tabassum>       | @<JTabassum>     |
-| <Tania Bagchi>       | @<taniabagchi-hue>     |
-| <Josephine>       | @<nvrv-gi>     |
-| <Kithusa>       | @<Kithusha>     |
+| <"Juveria Tabassum">       | @<"JTabassum">     |
+| <"Tania Bagchi">       | @<"taniabagchi-hue">     |
+| <"Josephine">       | @<"mvrv-gi">     |
+| <"Kithusha">       | @<"Kithusha">     |
 
 Note:  Be sure to [add all of the group members to as collaborators on this repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository).
 
