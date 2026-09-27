@@ -34,7 +34,7 @@ def confirm(player):
                 nameit(player)
             else:
                 choose()
-            
+
 def nameit(player):
     print("Lets name your charcater!")
     name:str = input("What do you want to name your cat?\n")
