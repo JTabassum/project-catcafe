@@ -21,10 +21,10 @@ in - the rest of this file is one row per member, per milestone, against their s
 
 | Student | Slice (the feature they own) |
 |---------|------------------------------|
-| <"Juveria">  | <"Input loops">                    |
-| <"Josephine">  | <"Board/State">                    |
-| <"Kithusha">  | <"Scoring">                    |
-| <"Tania">  | <"Simple Computer Player">                    |
+| Juveria  | Input loops                    |
+| Josephine  | Board/State                    |
+| Kithusha  | Scoring                    |
+| Tania  | Simple Computer Player                    |
 
 <!-- Teams of four: delete the fifth row, here and in the tables below. -->
 
@@ -56,7 +56,7 @@ Worked example:
 
 | Student | Planning | Control flow | Collections | Functions |
 |---------|----------|--------------|-------------|-----------|
-| <name>  |          |              |             |           |
+| Juveria |          |              |             |           |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
