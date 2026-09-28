@@ -6,10 +6,13 @@ from Milestone 1 onward. Replace the placeholder below with your own core loop.
 
 
 def main():
+
 c1 = "Calico"
 c2 = "Siamese"
 c3 = "Ragdoll"
 player = 0
+top = ""
+bottoms = ""
     
 def choose():
     player = int(input(f"Choose your character: \n{c1}\n{c2}\n{c3} \n(Enter 1, 2, or 3)\n"))
@@ -34,13 +37,21 @@ def confirm(player):
                 nameit(player)
             else:
                 choose()
+            
+            
+def dressup(player):
+    top = input("What top do you want to wear?")
+    print("Top 1\nTop 2\nTop 3") 
+    bottoms = input("What bottoms do you want to wear?")
+    print("Bottom 1\nBottom 2\nBottom 3")  
 
+    
 def nameit(player):
     print("Lets name your charcater!")
     name:str = input("What do you want to name your cat?\n")
     display(player, name)
     
-def display(player, name):
+def display(player, name, top, bottoms):
     if player == 1:
         print(f"You are a {c1} cat named {name}!")
     elif player == 2:
@@ -49,6 +60,7 @@ def display(player, name):
         print(f"You are a {c3} cat named {name}!")    
     
 choose()
+
 
 
 
