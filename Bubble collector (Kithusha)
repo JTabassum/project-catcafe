@@ -1,1 +1,83 @@
+#variables
+bubbles:int=0
+score:int=0
+bubble_collection:bool=True
+special_item:bool=True
+level:int=2
+total_special:int=0
+special_score:int=0
+score_collector:list[int]=[]
+hit_fish:bool=True
+start:str
+show_all:str
+all_in_one:list[str]
+lost:bool=True
+round:int=1
+
+
+print("\n________________Welcome To The Underwater : Level 2________________\n")
+#Ask the user if they would like to start game.
+start=input("Would you like to start the game? (yes/no)\n")
+
+#If the player collect bubble, bubble will increase by one and score by 10,
+#  if it is a special item, special item increase by one and score by 20 
+# if they hit fish there score will be reduced by 5. 
+def score_flow(score:int, bubbles:bool, total_special:int, special_item:bool, bubble_collection:bool, hit_fish:bool) :
+    while(score<100):
+            if bubble_collection==True:
+               bubbles+=1
+               score+=10
+               print(f'\n\nBubble:{bubbles}')
+               #\nScore:{score}
+               #score_collector(score)
+            if special_item==True:
+               score+=20
+               total_special+=1
+               print(f'\n\nSpecial item:{total_special}')
+               #\nScore:{score}
+            if hit_fish==True:
+                #print(f'\n\nScore reduced to: {score}')
+                score-=5
+    return score, bubbles, total_special
+
+
+    
+
+if start=="yes":
+    #if they lost they have to play again
+    while lost==True:
+        print("______________________________________________________________________________________________________________")
+        print(f'                                       ROUND {round}' )
+        print("______________________________________________________________________________________________________________")
+        #local variable=global variable
+        score,bubbles,total_special=score_flow(score,bubbles,total_special,special_item,bubble_collection,hit_fish)
+        all_in_one = [bubbles,score,level,total_special]
+
+        
+        show_all=input("\nDo you want to know your current holdings?\n(yes/no)")
+        #if they want to see their current holdings, print them
+        if show_all=="yes":
+            print(f'\nTotal Bubbles: {bubbles}\nTotal Score: {all_in_one[1]}\nCurrent Level: {all_in_one[2]}\nTotal Special Items: {all_in_one[3]}')
+        #player must have score >=100 and special item>=4 to win this level
+        if(all_in_one[1]>=100 and all_in_one[3]>=4 ):
+            print("\n              ____*****CONGRATULATION! YOU UNLOCKED THE FINAL LEVEL*****____")
+            score+=40
+            level=3
+            lost=False
+           
+        else:
+            print("\n                   ***YOU LOST!, TRY AGAIN!***")
+            lost=True
+        if lost==True:
+            score=0
+            level=2
+            bubbles=0
+            total_special=0
+            round+=1
+
+
+else:    
+    print("\n                               ****Game Over!****\n\n")
+    
+
 
