@@ -1,10 +1,9 @@
-# <your project name>
+# Cat Cafe
 
 ## The application
+This is a platform adventure game where you play as a cat delivering peculiar orders in strange places.
 
-<Two or three sentences: what are you building, and who plays or uses it? It has to fit the
-networked, multi-user theme - see the "Suggested projects" section of
-[`MILESTONES.md`](MILESTONES.md). Name one of the suggestions, or describe your own idea.>
+
 
 ## The team
 
