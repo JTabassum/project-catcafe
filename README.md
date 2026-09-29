@@ -3,7 +3,7 @@
 ## The application
 This is a platform adventure game where you play as a cat delivering peculiar orders in strange places.
 
-The momwnt you open your game, you are greeted with a 'character creation' mini game, where you create your own character.
+The moment you open your game, you are greeted with a 'character creation' mini game, where you create your own character.
 You have the option between three cats, a few simple clothing items, and a name for your character.
 
 ## The team
