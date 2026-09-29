@@ -1,1 +1,48 @@
+import random # allows for the random element in the compter player 
 
+# Collection containing the computer player's information, ex. for the octopus
+octopus = {
+    "type": "octopus", # What type of enemy is this 
+    "x": 300, #Its current x position, does not change throughout for this example 
+    "speed": 20, #The speed in which it is going, will change in this example
+    "state": "moving", #What state it is in, changes depending on player's range
+    "detection_range": 100 #Used to calculate the state 
+}
+
+
+# Function that controls the octopus taking in the octopus collection and the cat's position
+def move_octopus(octopus, speed):
+
+    #Finds the distance between the cat and the octopus
+    # abs() makes sure that the distance is always positive 
+    distance = abs(cat_x - octopus["x"])
+
+    #changes state to chasing if octopus is within the detection range (100)
+    if distance <= octopus["detection_range"]:
+        octopus["state"] = "chasing"
+
+        #Randomly decides if the octopus is at a steady speed or speeds up
+        speed_choice = random.choice(["steady", "speeding up"])
+        
+        #If randomly speeds up, make speed 3 times current speed (60)
+        if speed_choice == "speeding up":
+            speed = octopus["speed"] * 3
+        #If not, make speed normal
+        else:
+            speed = octopus["speed"]
+
+    # if the cat is too far away, octopus stays in its moving state
+    else: 
+        octopus["state"] = "moving"
+        speed=40
+    return octopus["state"], speed
+
+
+#Demonstration
+cat_x = int(input("Enter the cat's position: "))
+
+state, speed = move_octopus(octopus, cat_x)
+
+print("Octopus position:", octopus["x"])
+print("Octopus state:", octopus["state"])
+print("Octopus speed:", speed)
