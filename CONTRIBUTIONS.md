@@ -56,7 +56,7 @@ Worked example:
 
 | Student | Planning | Control flow | Collections | Functions |
 |---------|----------|--------------|-------------|-----------|
-| Juveria | 3473d45  |   3473d45    |   917ba2d   |  032ccff  |
+| Juveria | fdb0756  |   3473d45    |   917ba2d   |  032ccff  |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
