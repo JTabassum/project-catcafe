@@ -71,7 +71,7 @@ changed and how you tested it.
 
 | Student | AI tool(s) used | Used it for |
 |---------|-----------------|-------------|
-| <name>  |                 |             |
+| Kithusha|  ChatGPT        |I used it to find why my function doesn't work the way I want. It explain what is wrong with my code.|                       |
 | <name>  |                 |             |
 | <name>  |                 |             |
 | <name>  |                 |             |

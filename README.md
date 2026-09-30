@@ -3,8 +3,10 @@
 ## The application
 This is a platform adventure game where you play as a cat delivering peculiar orders in strange places.
 
-The moment you open your game, you are greeted with a 'character creation' mini game, where you create your own character.
-You have the option between three cats, a few simple clothing items, and a name for your character.
+Scoring(Kithusha)
+The first level of this game is the underwater level; where you collect coins on your way to the house. At this level, you must avoid obstacles (like hitting fish) and ensure you don’t run out of breath while doing so.
+
+
 
 ## The team
 
