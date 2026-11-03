@@ -73,7 +73,23 @@ class Score():
             writer.writeheader()
             writer.writerows(scores)
             
-    
+def position()->None:
+    score:int=0
+    positions={
+        "player":[{"x":10,"y":20}],
+        "coins":[{"x":20,"y":45},{"x":35,"y":30}]
+        }
+
+    if positions["player"][0]["x"] == positions["coins"][0]["x"] and positions["player"][0]["y"] == positions["coins"][0]["y"] : 
+        score+=1
+    if positions["player"][0]["x"] == positions["coins"][1]["x"] and positions["player"][0]["y"] == positions["coins"][1]["y"] :
+        score+=1
+
+    return score
+
+
+some=position()
+print(f'{some}')
 
 
 #Let the user to choose the difficulty level of the game
