@@ -95,9 +95,7 @@ def dressup(player, name):
     return Character(name, breed, top, bottoms)
 
 
-
 #Motion
-
 class Character:
     def __init__(self, breed, name, top, bottoms, x = 0, y = 0):
         self.breed = breed
@@ -115,11 +113,15 @@ class Motion:
             self.character.x = 0
             self.character.y = 0
     
-    def left(self):
-        self.character.x -= 1
+    def left(self, steps=1):
+            if steps <= 0:
+                return
+            self.character.x -= steps
     
-    def right(self):
-        self.character.x += 1
+    def right(self, steps=1):
+        if steps <= 0:
+            return
+        self.character.x += steps
     
     def jump(self):
         self.character.y += 5
@@ -132,16 +134,20 @@ class Motion:
         self.reset(self.character)
         
 
+        
+
 
 #my main
-# main.py
-
 from chooseyourcharacter import choose
 from motion_class import Motion
 
 
 def start():
-    cat = choose()        
+    cat = choose() 
+    
+    with open("Character.txt", "w") as f:
+        f.write(f"{cat.breed}\n{cat.name}\n{cat.top}\n{cat.bottoms}\n")       
+    
     cat.display()         
     move = Motion(cat)    
 
