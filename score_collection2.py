@@ -72,7 +72,8 @@ class Score():
             writer = csv.DictWriter(output_file, fieldnames=['Player', 'Score', 'Points', 'Special_items', 'Number of enemy', 'Level' ])
             writer.writeheader()
             writer.writerows(scores)
-            
+
+#Checking the positinos of the player and coins, if it overlabs, increase score by 1           
 def position()->None:
     score:int=0
     positions={
@@ -91,6 +92,11 @@ def position()->None:
 some=position()
 print(f'{some}')
 
+#moving to the next level
+def next_level(level:int=0):
+    if level==3:
+        return 
+    return next_level(level+1)
 
 #Let the user to choose the difficulty level of the game
 def difficulty():
