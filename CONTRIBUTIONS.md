@@ -66,9 +66,9 @@ Worked example:
 
 ## Milestone 2 - Practical Application (Unit 03)
 
-| Student | OOP | File I/O | Recursion | Command-line args | Interface (TUI/GUI) |
-|---------|-----|----------|-----------|-------------------|---------------------|
-| Juveria |     |          |           |                   |                     |
+| Student |    OOP     |   File I/O      |    Recursion    | Command-line args | Interface (TUI/GUI) |
+|---------|------------|-----------------|-----------------|-------------------|---------------------|
+| Juveria |  0b8b4db   |     0b8b4db     |    0b8b4db      |        0b8b4db    |       0b8b4db       |
 | <name>  |     |          |           |                   |                     |
 | <name>  |     |          |           |                   |                     |
 | <name>  |     |          |           |                   |                     |
