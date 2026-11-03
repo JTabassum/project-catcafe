@@ -1,0 +1,282 @@
+# LEVEL ONE 
+
+class UnderwaterAdventure:
+
+    def __init__(self, difficulty):
+        self.difficulty = difficulty
+
+        self.position = 0
+        self.score = 0
+        self.health = 3
+        self.max_health = 3
+
+        self.bubbles_collected = 0
+        self.treasures_collected = 0
+        self.pearls = 0
+        self.enemy_hits = 0
+
+        self.visited = set()
+        self.game_over = False
+
+        # EASY DIFFICULTY
+        if difficulty == "easy":
+            self.length = 14
+
+            self.bubbles = [1, 3, 5, 9, 11, 13]
+            self.treasures = [4, 8]
+
+            self.enemies = {
+                6: "crouch"
+            }
+
+            self.obstacles = {
+                2: "jump",
+                10: "jump",
+                12: "crouch"
+            }
+
+            self.required_bubbles = 5
+            self.required_treasures = 1
+
+        # MEDIUM DIFFICULTY
+        elif difficulty == "medium":
+            self.length = 20
+
+            self.bubbles = [1, 3, 5, 7, 9, 11, 13, 15, 17]
+            self.treasures = [4, 8, 12]
+
+            self.enemies = {
+                6: "crouch",
+                14: "jump"
+            }
+
+            self.obstacles = {
+                2: "jump",
+                10: "crouch",
+                16: "jump",
+                18: "crouch"
+            }
+
+            self.required_bubbles = 6
+            self.required_treasures = 2
+
+        # HARD DIFFICULTY
+        else:
+            self.length = 26
+
+            self.bubbles = [
+                1, 3, 5, 7, 9, 11,
+                13, 15, 17, 19, 21, 23
+            ]
+
+            self.treasures = [4, 8, 12, 16]
+
+            self.enemies = {
+                6: "crouch",
+                14: "jump",
+                20: "crouch"
+            }
+
+            self.obstacles = {
+                2: "jump",
+                10: "crouch",
+                18: "jump",
+                22: "crouch",
+                24: "jump"
+            }
+
+            self.required_bubbles = 8
+            self.required_treasures = 3
+
+    # COLLECTING BUBBLES
+    def collect_bubble(self):
+        self.bubbles_collected += 1
+        self.score += 10
+
+        if self.difficulty == "easy":
+            if self.health < self.max_health:
+                self.health += 1
+
+        elif self.difficulty == "medium":
+            if self.bubbles_collected % 3 == 0:
+                if self.health < self.max_health:
+                    self.health += 1
+
+        # Hard difficulty does not restore health.
+
+        print("Collected a bubble! +10 points.")
+        print("Health:", self.health)
+
+    # COLLECTING TREASURE
+    def collect_treasure(self):
+        self.treasures_collected += 1
+        self.score += 20
+        self.pearls += 20
+
+        print("Collected treasure! +20 points.")
+        print("Earned 20 pearls!")
+
+    # ENEMY DAMAGE
+    def enemy_hit(self):
+        self.enemy_hits += 1
+        self.health -= 1
+
+        if self.difficulty == "easy":
+            self.score -= 5
+
+        elif self.difficulty == "medium":
+            self.score -= 10
+
+        elif self.difficulty == "hard":
+            self.score -= 15
+
+        print("An enemy hit you!")
+        print("Lost 1 health.")
+        print("Health:", self.health)
+
+        if self.health <= 0:
+            self.game_over = True
+
+    # OBSTACLE DAMAGE
+    def obstacle_hit(self):
+        self.score -= 5
+
+        if self.difficulty == "easy":
+            print("You hit an obstacle!")
+            print("Lost 5 points.")
+
+        elif self.difficulty == "medium":
+            print("You hit an obstacle!")
+            print("Lost 5 points.")
+
+        elif self.difficulty == "hard":
+            self.health -= 1
+            print("You hit an obstacle!")
+            print("Lost 5 points and 1 health.")
+
+        print("Health:", self.health)
+
+        if self.health <= 0:
+            self.game_over = True
+
+    # WARNINGS
+    def show_warning(self):
+        next_position = self.position + 1
+
+        if next_position in self.enemies:
+            print("WARNING! An enemy is approaching!")
+            print("Avoid it by:", self.enemies[next_position].upper())
+
+        elif next_position in self.obstacles:
+            print("WARNING! An obstacle is approaching!")
+            print("Avoid it by:", self.obstacles[next_position].upper())
+
+    # CHECK CURRENT LOCATION
+    def check_location(self, action):
+        position = self.position
+
+        if position in self.visited:
+            return
+
+        self.visited.add(position)
+
+        if position in self.bubbles:
+            self.collect_bubble()
+
+        elif position in self.treasures:
+            self.collect_treasure()
+
+        elif position in self.enemies:
+            if action == self.enemies[position]:
+                print("You avoided the enemy!")
+
+            else:
+                self.enemy_hit()
+
+        elif position in self.obstacles:
+            if action == self.obstacles[position]:
+                print("You avoided the obstacle!")
+
+            else:
+                self.obstacle_hit()
+
+    # DISPLAY PLAYER STATUS
+    def show_status(self):
+        print("\n----------------------")
+        print("UNDERWATER ADVENTURE")
+        print("----------------------")
+        print("Position:", self.position, "/", self.length)
+        print("Health:", self.health, "/", self.max_health)
+        print("Score:", self.score)
+        print("Bubbles:", self.bubbles_collected)
+        print("Treasures:", self.treasures_collected)
+        print("Pearls:", self.pearls)
+        print("----------------------")
+
+    # PLAY THE LEVEL
+    def play(self):
+
+        print("\nWelcome to the Underwater Adventure!")
+
+        while self.position < self.length and not self.game_over:
+
+            self.show_status()
+            self.show_warning()
+
+            action = input(
+                "\nWhat would you like to do?\n"
+                "R = Right\n"
+                "J = Jump\n"
+                "C = Crouch\n"
+                "Enter your choice: "
+            ).strip().lower()
+
+            if action in ["r", "right"]:
+                action = "right"
+
+            elif action in ["j", "jump"]:
+                action = "jump"
+
+            elif action in ["c", "crouch"]:
+                action = "crouch"
+
+            else:
+                print("Invalid choice. Try again.")
+                continue
+
+            self.position += 1
+
+            self.check_location(action)
+
+        if self.game_over:
+            print("\nGAME OVER!")
+            return False
+
+        if (self.bubbles_collected >= self.required_bubbles
+                and self.treasures_collected >= self.required_treasures):
+
+            print("\nLEVEL COMPLETE!")
+            return True
+
+        else:
+            print("\nLEVEL INCOMPLETE!")
+            return False
+
+
+# RUN UNDERWATER ADVENTURE
+difficulty = input("Choose easy, medium, or hard: ").strip().lower()
+
+while difficulty not in ["easy", "medium", "hard"]:
+    print("Invalid difficulty.")
+    difficulty = input("Choose easy, medium, or hard: ").strip().lower()
+
+level = UnderwaterAdventure(difficulty)
+completed = level.play()
+
+print("\nFINAL RESULTS")
+print("Score:", level.score)
+print("Health:", level.health)
+print("Bubbles:", level.bubbles_collected)
+print("Treasures:", level.treasures_collected)
+print("Pearls:", level.pearls)
+print("Enemy hits:", level.enemy_hits)
