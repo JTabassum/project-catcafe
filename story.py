@@ -1,7 +1,4 @@
 import argparse
-# This is a simple text-based adventure game 
-# the player takes on the role of a cat baker who must deliver cupcakes to a princess.
-
 print("Welcome to the Cat Baker Adventure Game!")
 
 #step 1: Customize your cat
@@ -30,9 +27,6 @@ elif eye_color == "purple":
     print("Your cat has stunning purple eyes!")
 elif eye_color == "pink":
     print("Your cat has charming pink eyes!")
-
-
-
 # Story part of the Cat Bakery game.
 # Decisions are always in this order: 1 = brave, 2 = smart, 3 = peaceful.
 
@@ -92,8 +86,6 @@ def play_bubble_forest():
 
 
 def play_underwater():
-    # Level 2 is the scoring code. It has no story decision, so nothing is returned.
-    # When the files are put together, call the scoring code from here.
     print()
     print("[Level 2: Underwater - the scoring level goes here]")
 
@@ -152,7 +144,6 @@ def show_ending(choices):
 
 
 def main(name=None):
-    # name can be passed in if the character code already asked for it
     parser = argparse.ArgumentParser(description="Cat Bakery Adventure")
     parser.add_argument("--checkpoint", type=int, default=1, help="part to start from (1 to 4)")
     parser.add_argument("--choices", default="", help="choices made so far, for example 13")
