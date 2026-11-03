@@ -106,53 +106,35 @@ def difficulty():
         return parser.parse_args()   
 
 #In a GUI show who is the winner of the finished level
-def winner(first_score:int, second_score:int)->None:
-        root = tk.Tk()
-        root.title('The Winner Of The Level')
-        if first_score>second_score:
-            label_1 = tk.Label(root, text="Player 1", font=('Arial', 18))
-            label_2=tk.Label(root,text=first_score-second_score, font=('Arial',16))
-
-            label_1.pack(padx=10, pady=5)
-            label_2.pack(padx=5, pady=3)
-            root.mainloop()
-            
-        elif first_score<second_score:
-            label_1 = tk.Label(root, text="Player 2", font=('Arial', 18))
-            label_2=tk.Label(root,text=second_score-first_score, font=('Arial',16))
-
-            label_1.pack(padx=10, pady=5)
-            label_2.pack(padx=5, pady=3)
-            root.mainloop()
-
+def winner(score:int)->None:
+        root=tk.Tk()
+        if(score>20):
+            root.title('Win')
         else:
-            label_1 = tk.Label(root, text="TIE", font=('Arial', 18))
-            label_2=tk.Label(root,text='0', font=('Arial',16))
-                
-            label_1.pack(padx=10, pady=5)
-            label_2.pack(padx=5, pady=3)
-            root.mainloop()
+            root.title('Lost')
+        label_1 = tk.Label(root, text=score, font=('Arial', 18))
+        label_1.pack(padx=10, pady=5)
+        root.mainloop()
 
-       
 
 
 ###TESTING
 
 player1 = Score(0, 0, 1, 0, 0, 1)
-player2 = Score(0, 0, 1, 0, 0, 2)
+#player2 = Score(0, 0, 1, 0, 0, 2)
 
                                       
 difficulty_level = difficulty().difficulty
 def check_difficulty()->None:
     if difficulty_level=='easy' and player1:
         player1.easyEnemies_hit()
-        player2.easyEnemies_hit()
+        #player2.easyEnemies_hit()
     elif difficulty_level=='medium' and player1:
         player1.mediumEnemies_hit()
-        player2.mediumEnemies_hit()
+        #player2.mediumEnemies_hit()
     elif difficulty_level=='hard' and player1:
         player1.hardEnemies_hit()
-        player2.hardEnemies_hit()
+        #player2.hardEnemies_hit()
     else:
         print(f'Nothing')
 
@@ -163,8 +145,8 @@ player1.bubble()
 player1.bubble()
 player1.special_item_collection()
 
-player2.bubble()
-player2.easyEnemies_hit()
+#player2.bubble()
+#player2.easyEnemies_hit()
 
 
 
@@ -172,22 +154,23 @@ print("Player 1:")
 player1.current_score()
 
 print("Player 2:")
-player2.current_score()
+#player2.current_score()
 
 #CSV test
 player1.result()
-player2.result()
+#player2.result()
 
 #winner
-winner(player1.score,player2.score)
+winner(player1.score)
+
 
 #reset
 player1.reset()
-player2.reset()
+#player2.reset()
 
 #csv
 player1.result()
-player2.result()
+#player2.result()
 
 
 
