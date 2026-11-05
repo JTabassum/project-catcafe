@@ -56,8 +56,8 @@ Worked example:
 
 | Student | Planning | Control flow | Collections | Functions |
 |---------|----------|--------------|-------------|-----------|
-| Juveria | 3473d45  |   3473d45    |   917ba2d   |  032ccff  |
-| Kithusha| 3473d45  |   e7ecb5f    |   e7ecb5f   |  e7ecb5f  |
+| Juveria |          |              |             |  032ccff  |
+|Kithusha | 3473d45  |  e7ecb5f     |  e7ecb5f    |  e7ecb5f  |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
@@ -66,13 +66,13 @@ Worked example:
 
 ## Milestone 2 - Practical Application (Unit 03)
 
-| Student |    OOP     |   File I/O      |    Recursion    | Command-line args | Interface (TUI/GUI) |
-|---------|------------|-----------------|-----------------|-------------------|---------------------|
-| Juveria |  0b8b4db   |     0b8b4db     |    0b8b4db      |        0b8b4db    |       0b8b4db       |
-| <name>  |     |          |           |                   |                     |
-| <name>  |     |          |           |                   |                     |
-| <name>  |     |          |           |                   |                     |
-| <name>  |     |          |           |                   |                     |
+| Student | OOP   | File I/O | Recursion | Command-line args | Interface (TUI/GUI) |
+|---------|-----  |----------|-----------|-------------------|---------------------|
+| <name>  |       |          |           |                   |                     |
+|Kithusha |4e1da30|4e1da30   |4e1da30    |    4e1da30        |  4e1da30            |
+| <name>  |       |          |           |                   |                     |
+| <name>  |       |          |           |                   |                     |
+| <name>  |       |          |           |                   |                     |
 
 ## Milestone 3 - Final Product (Units 04-05)
 
