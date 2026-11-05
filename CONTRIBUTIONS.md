@@ -56,7 +56,7 @@ Worked example:
 
 | Student | Planning | Control flow | Collections | Functions |
 |---------|----------|--------------|-------------|-----------|
-| Juveria |          |              |             |  032ccff  |
+| Juveria |3473d45   |              |             |  032ccff  |
 |Kithusha | 3473d45  |  e7ecb5f     |  e7ecb5f    |  e7ecb5f  |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
@@ -68,8 +68,8 @@ Worked example:
 
 | Student | OOP   | File I/O | Recursion | Command-line args | Interface (TUI/GUI) |
 |---------|-----  |----------|-----------|-------------------|---------------------|
-| <name>  |       |          |           |                   |                     |
-|Kithusha |4e1da30|4e1da30   |4e1da30    |    4e1da30        |  4e1da30            |
+|Juveria  |38bbcd3|38bbcd3   | 38bbcd3   |  38bbcd3          | 38bbcd3             |
+|Kithusha |4e1da30|4e1da30   |4e1da30    |   4e1da30         |  4e1da30            |
 | <name>  |       |          |           |                   |                     |
 | <name>  |       |          |           |                   |                     |
 | <name>  |       |          |           |                   |                     |
